@@ -7,58 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-        /* Remove the navbar's default margin-bottom and rounded borders */
-        .navbar {
-            margin-bottom: 0;
-            border-radius: 0;
-            color: #000000;
-
-
-        }
-
-        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-        .row.content {
-            height: 450px;
-            color: #ffffff;
-        }
-
-        /* Set gray background color and 100% height */
-        .sidenav {
-            padding-top: 20px;
-            background-color: rgba(0, 0, 0, 0.0);
-            height: calc(100vh - 30px);
-
-
-        }
-
-        /* Set black background color, white text and some padding */
-        footer {
-            height: 30px;
-            background-color: #000000;
-            color: #ffffff;
-            padding: 5px;
-
-        }
-
-        /* On small screens, set height to 'auto' for sidenav and grid */
-        @media screen and (max-width: 767px) {
-            .sidenav {
-                height: auto;
-                padding: 15px;
-            }
-            .row.content {height:auto;}
-        }
-
-        body {
-            height: calc(100vh - 30px);
-            background: url("websiteBackground.jpg") 50% 50%;
-        }
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="css/mySheet.css">
 
 </head>
 <body>
@@ -71,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"> <img src = "destiny2logo.png" alt = "Destiny Logo" width = "25" height = "25"></a>
+            <a class="navbar-brand" href="#"> <img src = "images/destiny2logo.png" alt = "Destiny Logo" width = "25" height = "25"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -98,23 +47,70 @@
             <h1>Destiny 2 Daily Content</h1>
             <p>Destiny 2 daily reset time occurs at 10 AM PST.</p>
             <hr>
-            <h3><br>Daily Lost Sector</h3>
-            <p>Today's Exotic Slot: Helmet<br><br>
-                Titan Exotics: <br><br>
-                Hunter Exotics: <br><br>
-                Warlock Exotics: <br><br>
-            </p>
+            <h3><br>Daily Lost Sector<br><br> Today's Exotic Slot: Helmet<br><br></h3>
+
+            <p>Titan Exotics:</p>
+            <div class="slideshow-container">
+                <div class="mySlides1">
+                    <img alt src="images/preciousScars.jpg" style="width:100%">
+                    <div class="text">Precious Scars</div>
+                </div>
+
+                <div class="mySlides1">
+                    <img alt src="images/LorelySplendor.jpg" style="width:100%">
+                    <div class="text">Loreley Splendor</div>
+                </div>
+
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+            </div>
+
+
+            <p><br>Hunter Exotics: <br></p>
+            <div class="slideshow-container">
+                <div class="mySlides2">
+                    <img alt src="images/Bakris.jpg" style="width:100%">
+                    <div class="text">Mask of Bakris</div>
+                </div>
+
+                <div class="mySlides2">
+                    <img alt src="images/BlightRanger.jpg" style="width:100%">
+                    <div class="text">Blight Ranger</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+            </div>
+               <p><br>Warlock Exotics: <br></p>
+            <div class="slideshow-container">
+                <div class="mySlides3">
+                    <img alt src="images/DawnChorus.jpg" style="width:100%">
+                    <div class="text">Dawn Chorus</div>
+                </div>
+
+                <div class="mySlides3">
+                    <img alt src="images/FallenSunstar.jpg" style="width:100%">
+                    <div class="text">Fallen Sunstar</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+            </div>
+
+            <p><br></p>
+
         </div>
         <div class="col-sm-2 sidenav">
 
             </div>
         </div>
     </div>
-</div>
+
 
 <footer class="container-fluid text-center">
     <p><a href="https://www.youtube.com/">Youtube</a> | <a href="https://app.destinyitemmanager.com">Destiny Item Manager</a></p>
 </footer>
 
+<script src="js/slideShow.js"></script>
 </body>
 </html>
