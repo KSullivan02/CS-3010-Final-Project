@@ -12,18 +12,24 @@
         .navbar {
             margin-bottom: 0;
             border-radius: 0;
-            color: black;
+            color: #000000;
+
 
         }
 
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-        .row.content {height: 450px}
+        .row.content {
+            height: 450px;
+            color: #ffffff;
+        }
 
         /* Set gray background color and 100% height */
         .sidenav {
             padding-top: 20px;
-            background-color: #ffffff;
-            height: calc(100vh - 40px);
+            background-color: rgba(0, 0, 0, 0.0);
+            height: calc(100vh - 30px);
+
+
         }
 
         /* Set black background color, white text and some padding */
@@ -31,7 +37,8 @@
             height: 30px;
             background-color: #000000;
             color: #ffffff;
-            padding: 5px
+            padding: 5px;
+
         }
 
         /* On small screens, set height to 'auto' for sidenav and grid */
@@ -43,7 +50,16 @@
             .row.content {height:auto;}
         }
 
+        body {
+            height: calc(100vh - 30px);
+            background: url("websiteBackground.jpg") 50% 50%;
+        }
+
+
+
+
     </style>
+
 </head>
 <body>
 
@@ -80,17 +96,17 @@
         </div>
         <div class="col-sm-8 text-middle">
             <h1>Destiny 2 Daily Content</h1>
-            <p>Destiny 2 daily refresh time occurs at 10 AM Pacific.</p>
+            <p>Destiny 2 daily reset time occurs at 10 AM PST.</p>
             <hr>
-            <h3>Test</h3>
-            <p>Lorem ipsum...</p>
+            <h3><br>Daily Lost Sector</h3>
+            <p>Today's Exotic Slot: Helmet<br><br>
+                Titan Exotics: <br><br>
+                Hunter Exotics: <br><br>
+                Warlock Exotics: <br><br>
+            </p>
         </div>
         <div class="col-sm-2 sidenav">
-            <div class="well">
-                <p>ADS</p>
-            </div>
-            <div class="well">
-                <p>ADS</p>
+
             </div>
         </div>
     </div>

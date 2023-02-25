@@ -12,16 +12,24 @@
         .navbar {
             margin-bottom: 0;
             border-radius: 0;
+            color: #000000;
+
+
         }
 
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-        .row.content {height: 450px}
+        .row.content {
+            height: 450px;
+            color: #ffffff;
+        }
 
         /* Set gray background color and 100% height */
         .sidenav {
             padding-top: 20px;
-            background-color: #ffffff;
-            height: calc(100vh - 40px);
+            background-color: rgba(0, 0, 0, 0.0);
+            height: calc(100vh - 30px);
+
+
         }
 
         /* Set black background color, white text and some padding */
@@ -29,11 +37,8 @@
             height: 30px;
             background-color: #000000;
             color: #ffffff;
-            padding: 5px
-        }
+            padding: 5px;
 
-        label {
-            padding-bottom: 20px;
         }
 
         /* On small screens, set height to 'auto' for sidenav and grid */
@@ -44,7 +49,17 @@
             }
             .row.content {height:auto;}
         }
+
+        body {
+            height: calc(100vh - 30px);
+            background: url("websiteBackground.jpg") 50% 50%;
+        }
+
+
+
+
     </style>
+
 </head>
 <body>
 
@@ -56,7 +71,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="#"> <img src = "destiny2logo.png" alt = "Destiny Logo" width = "25" height = "25"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -80,9 +95,9 @@
             <p><a href="#">Link</a></p>
         </div>
         <div class="col-sm-8 text-middle">
-            <h1>Registration</h1>
+            <h1>Destiny 2 Daily Content</h1>
+            <p>Destiny 2 daily reset time occurs at 10 AM PST.</p>
             <hr>
-            <div class = list-group>
             <form method="POST">
                 <label for = "userName">User Name:</label>
                 <input type = "text" id = "userName" name = "userName"><br>
@@ -97,11 +112,13 @@
                 <label for = "lastName"> Last Name:</label>
                 <input type = "text" id = "lastName" name = "lastName"><br>
             </form>
-                </div>
         </div>
+        <div class="col-sm-2 sidenav">
+
         </div>
     </div>
-
+</div>
+</div>
 
 <footer class="container-fluid text-center">
     <p><a href="https://www.youtube.com/">Youtube</a> | <a href="https://app.destinyitemmanager.com">Destiny Item Manager</a></p>
