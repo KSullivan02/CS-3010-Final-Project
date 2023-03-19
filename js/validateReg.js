@@ -1,109 +1,86 @@
 function validateForm() {
-    // Get the values of all form inputs
-    const userName = document.getElementById("userName").value;
-    const password = document.getElementById("password").value;
-    const confPassword = document.getElementById("confPassword").value;
-    const firstName = document.getElementById("firstName").value;
-    const lastName = document.getElementById("lastName").value;
-    const address1 = document.getElementById("address1").value;
-    const address2 = document.getElementById("address2").value;
-    const city = document.getElementById("city").value;
-    const state = document.getElementById("state").value;
-    const zipCode = document.getElementById("zipCode").value;
-    const phoneNumber = document.getElementById("phoneNumber").value;
-    const email = document.getElementById("email").value;
-    const gender = document.getElementById("gender").value;
-    const maritalStatus = document.getElementById("maritalStatus").value;
-    const birthday = document.getElementById("birthday").value;
 
     // Validate user name
     if (!validUsername()) {
-        event.preventDefault()
-        console.log("FALSE");
+        console.log("FALSE Username");
         return false;
     }
 
 
     // Validate password
     if (!validPassword()) {
-        event.preventDefault()
-        console.log("FALSE");
+        console.log("FALSE Pass");
         return false;
     }
 
     // Validate confirm password
     if (!validConfPassword()) {
-        event.preventDefault()
-        console.log("FALSE");
+        console.log("FALSE confPass");
         return false;
     }
 
     // Validate first name
     if (!validFName()) {
-        event.preventDefault()
-        console.log("FALSE");
+        console.log("FALSE F name");
         return false;
     }
 
 
     // Validate last name
     if (!validLName()) {
-        event.preventDefault()
-        console.log("FALSE");
+        console.log("FALSE L name");
         return false;
     }
 
     // Validate address line 1
     if (!validAddress()) {
-        event.preventDefault()
-        console.log("FALSE");
+        console.log("FALSE Add");
         return false;
     }
 
     // Validate city
     if (!validCity()) {
-        event.preventDefault()
-        console.log("FALSE");
+        console.log("FALSE City");
         return false;
     }
 
     // Validate state
     if (!validState()) {
-        console.log("FALSE");
+        console.log("FALSE State");
         return false;
     }
 
     // Validate zip code
     if (!validZipcode()) {
-        console.log("FALSE");
+        console.log("FALSE Zip");
         return false;
     }
 
     // Validate phone number
     if (!validPhoneNum()) {
-        console.log("FALSE");
+        console.log("FALSE Phone");
         return false;
     }
 
     // Validate email
     if (!validEmail()) {
-        console.log("FALSE");
+        console.log("FALSE Email");
         return false;
     }
 
     // Validate gender
     if(!validGender()) {
-        console.log("FALSE");
+        console.log("FALSE Gender");
         return false;
     }
 
     if(!validMarry()) {
-        console.log("FALSE");
+        console.log("FALSE Marry");
         return false;
     }
 
     if(!validBirthday()) {
-        console.log("FALSE");
+        console.log("FALSE Birthday");
         return false;
     }
 
