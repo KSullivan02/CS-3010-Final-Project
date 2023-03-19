@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="css/mySheet.css">
 
     <style>
@@ -74,27 +75,30 @@
             <h1>Destiny 2 Daily Content</h1>
             <p>Destiny 2 daily reset time occurs at 10 AM PST.</p>
             <hr>
-            <form method="POST">
+            <form id = "myForm" method="POST" onsubmit="return validateForm()">
                 <label for = "userName">User Name:</label><br>
-                <input type = "text" id = "userName" name = "userName"><br>
+                <input type = "text" id = "userName" name = "userName" required><br>
+
+                <div id="passDiv" class="form-group">
                 <label for = "password">Password:</label><br>
-                <input type = "password" id = "password" name = "password"><br>
+                <input type = "password" id = "password" name = "password" required><br>
+                </div>
                 <label for = "confPassword">Confirm Password:</label><br>
-                <input type = "password" id = "confPassword" name = "confPassword"><br>
+                <input type = "password" id = "confPassword" name = "confPassword" required><br>
 
                 <label for = "firstName">First Name:</label><br>
-                <input type = "text" id = "firstName" name = "firstName"><br>
+                <input type = "text" id = "firstName" name = "firstName" required><br>
                 <label for = "lastName"> Last Name:</label><br>
-                <input type = "text" id = "lastName" name = "lastName"><br>
+                <input type = "text" id = "lastName" name = "lastName" required><br>
 
                 <label for = "address1">Address Line 1:</label><br>
-                <input type = "text" id = "address1" name = "address1"><br>
+                <input type = "text" id = "address1" name = "address1" required><br>
                 <label for = "address2">Address Line 2:</label><br>
                 <input type = "text" id = "address2" name = "address2"><br>
                 <label for = "city">City:</label><br>
-                <input type = "text" id = "city" name = "city"><br>
+                <input type = "text" id = "city" name = "city" required><br>
                 <label for = "state">  State:</label><br>
-                <select name="state" id="state">
+                <select name="state" id="state" required>
                     <option value=" "></option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -149,13 +153,16 @@
                     <option value="WY">Wyoming</option>
                 </select><br>
                 <label for = "zipCode">Zip Code:</label><br>
-                <input type = "text" id = "zipCode" name = "zipCode"><br>
+                <input class = "zipCode" type = "text" id = "zipCode" name = "zipCode" required><br>
+
+                <label for="phoneNumber">Phone Number:</label><br>
+                <input class = "phoneNumber" type="text" id="phoneNumber" name="phoneNumber" required><br>
 
                 <label for = "email">Email:</label><br>
-                <input type = "text" id = "email" name = "email"><br>
+                <input type = "text" id = "email" name = "email" required><br>
 
                 <br><label>Gender</label><br>
-                <input type = "radio" id="male" name="gender" value="Male">
+                <input type = "radio" id="male" name="gender" value="Male" required>
                 <label for="male">Male</label><br>
                 <input type = "radio" id="female" name="gender" value="Female">
                 <label for="female">Female</label><br>
@@ -163,15 +170,15 @@
                 <label for="other">Other</label><br>
 
                 <br><label>Marital Status</label><br>
-                <input type = "radio" id="single" name="maritalStatus" value="Single">
+                <input type = "radio" id="single" name="maritalStatus" value="Single" required>
                 <label for="single">Single</label><br>
                 <input type = "radio" id="married" name="maritalStatus" value="Married">
                 <label for="married">Married</label><br>
 
                 <br><label for="birthday">Birthday:</label><br>
-                <input type="date" id="birthday" name="birthday"><br>
+                <input type="date" id="birthday" name="birthday" required><br>
 
-                <br><input type="submit" value="Submit"> <input type="reset" value="Reset">
+                <br><input type="submit" value="Submit" onsubmit="validateForm()"> <input type="reset" value="Reset">
             </form>
 
             <br><br><br>
@@ -187,5 +194,6 @@
     <p><a href="https://www.youtube.com/">Youtube</a> | <a href="https://app.destinyitemmanager.com">Destiny Item Manager</a></p>
 </footer>
 
+<script src="js/validateReg.js"></script>
 </body>
 </html>
