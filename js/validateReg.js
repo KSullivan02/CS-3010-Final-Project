@@ -91,182 +91,225 @@ function validateForm() {
 }
 
 function validUsername() {
-    const userName = document.getElementById("userName").value;
+    const userName = document.getElementById("userName");
 
     // Validate user name
-    if (userName.length < 6) {
-        alert("Please enter a username with 6 or more characters.");
+    if (userName.value.length < 6) {
+        userName.style.borderColor = "red";
         return false;
     }
 
-    else if(userName.length > 50) {
-        alert("Please enter a username with less than 50 characters");
+    else if(userName.value.length > 50) {
+        userName.style.borderColor = "red";
         return false;
     }
-
+    else {
+        userName.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validPassword() {
-    const password = document.getElementById("password").value;
+    const password = document.getElementById("password");
     function validatePassword(password) {
         const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,50}$/;
         return passwordRegex.test(password);
     }
 
-    if (password === '') {
-        alert("Please enter a password.");
+    if (password.value === '') {
+        password.style.borderColor = "red";
         return false;
-    } else if (!validatePassword(password)) {
-        alert("Password must between 8 and 50 characters long, contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.");
+    } else if (!validatePassword(password.value)) {
+        password.style.borderColor = "red";
         return false;
     }
-
+    else {
+        password.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validConfPassword() {
-    const password = document.getElementById("password").value;
-    const confPassword = document.getElementById("confPassword").value;
+    const password = document.getElementById("password");
+    const confPassword = document.getElementById("confPassword");
 
-    if (confPassword === "") {
-        alert("Please confirm your password.");
+    if (confPassword.value === "") {
+        confPassword.style.borderColor = "red";
         return false;
-    } else if (confPassword !== password) {
-        alert("Passwords do not match.");
+    } else if (confPassword.value !== password.value) {
+        confPassword.style.borderColor = "red";
         return false;
     }
-
+    else {
+        confPassword.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validFName() {
-    const firstName = document.getElementById("firstName").value;
+    const firstName = document.getElementById("firstName");
 
-    if (firstName === "") {
-        alert("Please enter your first name.");
+    if (firstName.value === "") {
+        firstName.style.borderColor = "red";
         return false;
     }
-    else if(firstName.length > 50) {
-        alert("Please input a first name with less than 50 characters.");
+    else if(firstName.value.length > 50) {
+        firstName.style.borderColor = "red";
         return false;
     }
-
-
+    else {
+        firstName.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validLName() {
-    const lastName = document.getElementById("lastName").value;
+    const lastName = document.getElementById("lastName");
 
-    if (lastName === "") {
-        alert("Please enter your last name.");
+    if (lastName.value === "") {
+        lastName.style.borderColor = "red";
         return false;
     }
-    else if(lastName.length > 50) {
-        alert("Please input a last name with less than 50 characters.");
+    else if(lastName.value.length > 50) {
+        lastName.style.borderColor = "red";
         return false;
     }
-
+    else {
+        lastName.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validAddress() {
-    const address1 = document.getElementById("address1").value;
-    if (address1 === "") {
-        alert("Please enter your city.");
+    const address1 = document.getElementById("address1");
+    if (address1.value === "") {
+        address1.style.borderColor = "red";
         return false;
     }
-    else if (address1.length > 100) {
-        alert("Please enter a valid address that is less than 100 characters");
+    else if (address1.value.length > 100) {
+        address1.style.borderColor = "red";
         return false;
     }
-
+    else {
+        address1.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validCity() {
     // Validate city
-    const city = document.getElementById("city").value;
-    if (city === "") {
-        alert("Please enter your city.");
+    const city = document.getElementById("city");
+    if (city.value === "") {
+        city.style.borderColor = "red";
         return false;
     }
-    else if(city.length > 50) {
-        alert("Please enter a valid city with less than 50 characters");
+    else if(city.value.length > 50) {
+        city.style.borderColor = "red";
         return false;
     }
-
+    else {
+        city.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validState() {
-    const state = document.getElementById("state").value;
+    const state = document.getElementById("state");
 
-    if (state === " ") {
-        alert("Please select a state.");
+    if (state.value === " ") {
+        state.style.borderColor = "red";
         return false;
     }
-    else if (state.length > 52) {
-        alert("Invalid state field, please input a state with less than 52 characters");
+    else if (state.value.length > 52) {
+        state.style.borderColor = "red";
     }
-
+    else {
+        state.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validZipcode() {
-    const zipCode = document.getElementById("zipCode").value;
-    if (zipCode === "") {
-        alert("Please enter your zip code.");
+    const zipCode = document.getElementById("zipCode");
+    if (zipCode.value === "") {
+        zipCode.style.borderColor = "red";
         return false;
     }
-    else if(zipCode.length > 10 || zipCode.length < 5) {
-        alert("Zipcode must be minimum of 5 with a max of 10 characters");
+    else if(zipCode.value.length > 10 || zipCode.value.length < 5) {
+        zipCode.style.borderColor = "red";
+        return false;
     }
-
+    else {
+        zipCode.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validPhoneNum() {
-    const phoneNumber = document.getElementById("phoneNumber").value;
+    const phoneNumber = document.getElementById("phoneNumber");
 
-    if (phoneNumber === "") {
-        alert("Please enter your phone number.");
+    if (phoneNumber.value === "") {
+        phoneNumber.style.borderColor = "red";
         return false;
     }
-    else if(phoneNumber.length > 12) {
-        alert("Phone numbers are a max of 12 characters");
+    else if(phoneNumber.value.length > 12) {
+        phoneNumber.style.borderColor = "red";
         return false;
     }
-
+    else {
+        phoneNumber.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validEmail() {
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email");
 
-    if (email === "") {
-        alert("Please enter your email address.");
+    if (email.value === "") {
+        email.style.borderColor = "red";
         return false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-        alert("Please enter a valid email address.");
+    } else if (!/\S+@\S+\.\S+/.test(email.value)) {
+        email.style.borderColor = "red";
         return false;
     }
-
+    else {
+        email.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validGender() {
-    const gender = document.getElementById("gender").value;
-    if (gender < 1 || gender > 50) {
+    const gender = document.getElementById("gender");
+    if (gender.value < 1 || gender.value > 50) {
         return false;
     }
-
+    else {
+        gender.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validMarry() {
-    const maritalStatus = document.getElementById("maritalStatus").value;
-    if(maritalStatus < 1 || maritalStatus > 50) {
+    const maritalStatus = document.getElementById("maritalStatus");
+    if(maritalStatus.value < 1 || maritalStatus.value > 50) {
         return false;
     }
-
+    else {
+        maritalStatus.style.borderColor = "green";
+        return true;
+    }
 }
 
 function validBirthday() {
-    const birthday = document.getElementById("birthday").value;
-    if(birthday !== 10) {
+    const birthday = document.getElementById("birthday");
+    if(birthday.value.length !== 10) {
+        birthday.style.borderColor = "red";
         return false;
     }
-
+    else {
+        birthday.style.borderColor = "green";
+        return true;
+    }
 }
 
 

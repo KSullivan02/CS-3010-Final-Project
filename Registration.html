@@ -77,28 +77,28 @@
             <hr>
             <form id = "myForm" method="POST" onsubmit="return validateForm()">
                 <label for = "userName">User Name:</label><br>
-                <input type = "text" id = "userName" name = "userName" required><br>
+                <input type = "text" id = "userName" name = "userName" required oninput="return validUsername()"><br>
 
                 <div id="passDiv" class="form-group">
                 <label for = "password">Password:</label><br>
-                <input type = "password" id = "password" name = "password" required><br>
+                <input type = "password" id = "password" name = "password" required oninput="return validPassword()"><br>
                 </div>
                 <label for = "confPassword">Confirm Password:</label><br>
-                <input type = "password" id = "confPassword" name = "confPassword" required><br>
+                <input type = "password" id = "confPassword" name = "confPassword" required oninput="return validConfPassword()"><br>
 
                 <label for = "firstName">First Name:</label><br>
-                <input type = "text" id = "firstName" name = "firstName" required><br>
+                <input type = "text" id = "firstName" name = "firstName" required oninput="return validFName()"><br>
                 <label for = "lastName"> Last Name:</label><br>
-                <input type = "text" id = "lastName" name = "lastName" required><br>
+                <input type = "text" id = "lastName" name = "lastName" required oninput="return validLName()"><br>
 
                 <label for = "address1">Address Line 1:</label><br>
-                <input type = "text" id = "address1" name = "address1" required><br>
+                <input type = "text" id = "address1" name = "address1" required oninput="return validAddress()"><br>
                 <label for = "address2">Address Line 2:</label><br>
                 <input type = "text" id = "address2" name = "address2"><br>
                 <label for = "city">City:</label><br>
-                <input type = "text" id = "city" name = "city" required><br>
+                <input type = "text" id = "city" name = "city" required oninput="return validCity()"><br>
                 <label for = "state">  State:</label><br>
-                <select name="state" id="state" required>
+                <select name="state" id="state" required oninput="return validState()">
                     <option value=" "></option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -153,16 +153,16 @@
                     <option value="WY">Wyoming</option>
                 </select><br>
                 <label for = "zipCode">Zip Code:</label><br>
-                <input class = "zipCode" type = "text" id = "zipCode" name = "zipCode" required><br>
+                <input class = "zipCode" type = "text" id = "zipCode" name = "zipCode" required oninput="return validZipcode()"><br>
 
                 <label for="phoneNumber">Phone Number:</label><br>
-                <input class = "phoneNumber" type="text" id="phoneNumber" name="phoneNumber" required><br>
+                <input class = "phoneNumber" type="text" id="phoneNumber" name="phoneNumber" required oninput="return validPhoneNum()"><br>
 
                 <label for = "email">Email:</label><br>
-                <input type = "text" id = "email" name = "email" required><br>
+                <input type = "text" id = "email" name = "email" required oninput="return validEmail()"><br>
 
                 <br><label>Gender</label><br>
-                <input type = "radio" id="male" name="gender" value="Male" required>
+                <input type = "radio" id="male" name="gender" value="Male" required oninput="return validGender()">
                 <label for="male">Male</label><br>
                 <input type = "radio" id="female" name="gender" value="Female">
                 <label for="female">Female</label><br>
@@ -170,15 +170,15 @@
                 <label for="other">Other</label><br>
 
                 <br><label>Marital Status</label><br>
-                <input type = "radio" id="single" name="maritalStatus" value="Single" required>
+                <input type = "radio" id="single" name="maritalStatus" value="Single" required oninput="return validMarry()">
                 <label for="single">Single</label><br>
                 <input type = "radio" id="married" name="maritalStatus" value="Married">
                 <label for="married">Married</label><br>
 
                 <br><label for="birthday">Birthday:</label><br>
-                <input type="date" id="birthday" name="birthday" required><br>
+                <input type="date" id="birthday" name="birthday" required oninput="return validBirthday()"><br>
 
-                <br><input type="submit" value="Submit" onsubmit="return validateForm()"> <input type="reset" value="Reset">
+                <br><input type="submit" value="Submit"> <input type="reset" value="Reset">
             </form>
 
             <br><br><br>
