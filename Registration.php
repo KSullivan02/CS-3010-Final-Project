@@ -72,19 +72,29 @@
             <p><a href="#">Link</a></p>
         </div>
         <div class="col-sm-8 text-middle">
-            <h1>Destiny 2 Daily Content</h1>
-            <p>Destiny 2 daily reset time occurs at 10 AM PST.</p>
+            <h1>Registration</h1>
+            <p>Register for Alerts about specific vendor items</p>
+            <?php
+            include 'PHP/inputValidate.php';
+            ?>
             <hr>
-            <form id = "myForm" method="POST" onsubmit="return validateForm()">
+            <form id = "myForm" method="POST" novalidate onsubmit="return validateForm()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <label for = "userName">User Name:</label><br>
-                <input type = "text" id = "userName" name = "userName" required oninput="return validUsername()"><br>
+                <input type = "text" id = "userName" name = "userName"
+                       value="<?php echo $userName; ?>" required oninput="return validUsername()"/><br>
+                <span class="error">* <?php echo $userNameErr;?></span><br>
 
                 <div id="passDiv" class="form-group">
                 <label for = "password">Password:</label><br>
-                <input type = "password" id = "password" name = "password" required oninput="return validPassword()"><br>
+                <input type = "password" id = "password" name = "password"
+                       value="<?php echo $password; ?>"required oninput="return validPassword()"/><br>
+                    <span class="error">* <?php echo $passwordErr;?></span><br>
+
                 </div>
                 <label for = "confPassword">Confirm Password:</label><br>
-                <input type = "password" id = "confPassword" name = "confPassword" required oninput="return validConfPassword()"><br>
+                <input type = "password" id = "confPassword" name = "confPassword"
+                       value="<?php echo $confPass; ?>" required oninput="return validConfPassword()"/><br>
+                <span class="error">* <?php echo $confPassErr;?></span><br>
 
                 <label for = "firstName">First Name:</label><br>
                 <input type = "text" id = "firstName" name = "firstName" required oninput="return validFName()"><br>
@@ -194,6 +204,6 @@
     <p><a href="https://www.youtube.com/">Youtube</a> | <a href="https://app.destinyitemmanager.com">Destiny Item Manager</a></p>
 </footer>
 
-<script src="js/validateReg.js"></script>
+<!-- <script src="js/validateReg.js"></script> -->
 </body>
 </html>
