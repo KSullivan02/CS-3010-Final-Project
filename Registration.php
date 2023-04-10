@@ -82,114 +82,160 @@
                 <label for = "userName">User Name:</label><br>
                 <input type = "text" id = "userName" name = "userName"
                        value="<?php echo $userName; ?>" required oninput="return validUsername()"/><br>
-                <span class="error">* <?php echo $userNameErr;?></span><br>
+                <span class="error"><?php echo $userNameErr;?></span><br>
 
                 <div id="passDiv" class="form-group">
                 <label for = "password">Password:</label><br>
                 <input type = "password" id = "password" name = "password"
                        value="<?php echo $password; ?>"required oninput="return validPassword()"/><br>
-                    <span class="error">* <?php echo $passwordErr;?></span><br>
+                    <span class="error"><?php echo $passwordErr;?></span><br>
 
                 </div>
                 <label for = "confPassword">Confirm Password:</label><br>
                 <input type = "password" id = "confPassword" name = "confPassword"
                        value="<?php echo $confPass; ?>" required oninput="return validConfPassword()"/><br>
-                <span class="error">* <?php echo $confPassErr;?></span><br>
+                <span class="error"><?php echo $confPassErr;?></span><br>
 
+                <!--First Name-->
                 <label for = "firstName">First Name:</label><br>
-                <input type = "text" id = "firstName" name = "firstName" required oninput="return validFName()"><br>
+                <input type = "text" id = "firstName" name = "firstName"
+                       value="<?php echo $fName; ?> "required oninput="return validFName()"/><br>
+                <span class="error"><?php echo $fNameErr;?></span><br>
+
+                <!--Last Name-->
                 <label for = "lastName"> Last Name:</label><br>
-                <input type = "text" id = "lastName" name = "lastName" required oninput="return validLName()"><br>
+                <input type = "text" id = "lastName" name = "lastName"
+                       value="<?php echo $lName; ?> " required oninput="return validLName()"/><br>
+                <span class ="error"><?php echo $lNameErr;?> </span><br>
 
                 <label for = "address1">Address Line 1:</label><br>
-                <input type = "text" id = "address1" name = "address1" required oninput="return validAddress()"><br>
+                <input type = "text" id = "address1" name = "address1"
+                       value="<?php echo $address; ?> " required oninput="return validAddress()"><br>
+                <span class ="error"><?php echo $addressErr;?> </span><br>
+
                 <label for = "address2">Address Line 2:</label><br>
-                <input type = "text" id = "address2" name = "address2"><br>
+                <input type = "text" id = "address2" name = "address2"
+                       value="<?php echo $addTwo; ?> "><br>
+                <span class ="error"><?php echo $addTwoErr;?> </span><br>
+
                 <label for = "city">City:</label><br>
-                <input type = "text" id = "city" name = "city" required oninput="return validCity()"><br>
+                <input type = "text" id = "city" name = "city"
+                       value="<?php echo $city; ?> "required oninput="return validCity()"><br>
+                <span class ="error"><?php echo $cityErr;?> </span><br>
+
+
                 <label for = "state">  State:</label><br>
-                <select name="state" id="state" required oninput="return validState()">
-                    <option value=" "></option>
-                    <option value="AL">Alabama</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District Of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
-                    <option value="IA">Iowa</option>
-                    <option value="KS">Kansas</option>
-                    <option value="KY">Kentucky</option>
-                    <option value="LA">Louisiana</option>
-                    <option value="ME">Maine</option>
-                    <option value="MD">Maryland</option>
-                    <option value="MA">Massachusetts</option>
-                    <option value="MI">Michigan</option>
-                    <option value="MN">Minnesota</option>
-                    <option value="MS">Mississippi</option>
-                    <option value="MO">Missouri</option>
-                    <option value="MT">Montana</option>
-                    <option value="NE">Nebraska</option>
-                    <option value="NV">Nevada</option>
-                    <option value="NH">New Hampshire</option>
-                    <option value="NJ">New Jersey</option>
-                    <option value="NM">New Mexico</option>
-                    <option value="NY">New York</option>
-                    <option value="NC">North Carolina</option>
-                    <option value="ND">North Dakota</option>
-                    <option value="OH">Ohio</option>
-                    <option value="OK">Oklahoma</option>
-                    <option value="OR">Oregon</option>
-                    <option value="PA">Pennsylvania</option>
-                    <option value="RI">Rhode Island</option>
-                    <option value="SC">South Carolina</option>
-                    <option value="SD">South Dakota</option>
-                    <option value="TN">Tennessee</option>
-                    <option value="TX">Texas</option>
-                    <option value="UT">Utah</option>
-                    <option value="VT">Vermont</option>
-                    <option value="VA">Virginia</option>
-                    <option value="WA">Washington</option>
-                    <option value="WV">West Virginia</option>
-                    <option value="WI">Wisconsin</option>
-                    <option value="WY">Wyoming</option>
-                </select><br>
+                <select name="state" id="state"value="<?php echo $state ?? '';?>">
+                    <option hidden value="">Chose State</option>
+                    <option value="AL"<?php echo $state === 'AL' ? 'selected' : ''; ?>> Alabama </option>
+                    <option value="AK"<?php echo $state === 'AK' ? 'selected' : ''; ?>> Alaska </option>
+                    <option value="AZ"<?php echo $state === 'AZ' ? 'selected' : ''; ?>> Arizona</option>
+                    <option value="AR"<?php echo $state === 'AR' ? 'selected' : ''; ?>> Arkansas</option>
+                    <option value="CA"<?php echo $state === 'CA' ? 'selected' : ''; ?>> California</option>
+                    <option value="CO"<?php echo $state === 'CO' ? 'selected' : ''; ?>>Colorado</option>
+                    <option value="CT"<?php echo $state === 'CT' ? 'selected' : ''; ?>>Connecticut</option>
+                    <option value="DE"<?php echo $state === 'DE' ? 'selected' : ''; ?>>Delaware</option>
+                    <option value="DC"<?php echo $state === 'DC' ? 'selected' : ''; ?>>District Of Columbia</option>
+                    <option value="FL"<?php echo $state === 'FL' ? 'selected' : ''; ?>>Florida</option>
+                    <option value="GA"<?php echo $state === 'GA' ? 'selected' : ''; ?>>Georgia</option>
+                    <option value="HI"<?php echo $state === 'HI' ? 'selected' : ''; ?>>Hawaii</option>
+                    <option value="ID"<?php echo $state === 'ID' ? 'selected' : ''; ?>>Idaho</option>
+                    <option value="IL"<?php echo $state === 'IL' ? 'selected' : ''; ?>>Illinois</option>
+                    <option value="IN"<?php echo $state === 'IN' ? 'selected' : ''; ?>>Indiana</option>
+                    <option value="IA"<?php echo $state === 'IA' ? 'selected' : ''; ?>>Iowa</option>
+                    <option value="KS"<?php echo $state === 'KS' ? 'selected' : ''; ?>>Kansas</option>
+                    <option value="KY"<?php echo $state === 'KY' ? 'selected' : ''; ?>>Kentucky</option>
+                    <option value="LA"<?php echo $state === 'LA' ? 'selected' : ''; ?>>Louisiana</option>
+                    <option value="ME"<?php echo $state === 'ME' ? 'selected' : ''; ?>>Maine</option>
+                    <option value="MD"<?php echo $state === 'MD' ? 'selected' : ''; ?>>Maryland</option>
+                    <option value="MA"<?php echo $state === 'MA' ? 'selected' : ''; ?>>Massachusetts</option>
+                    <option value="MI"<?php echo $state === 'MI' ? 'selected' : ''; ?>>Michigan</option>
+                    <option value="MN"<?php echo $state === 'MN' ? 'selected' : ''; ?>>Minnesota</option>
+                    <option value="MS"<?php echo $state === 'MS' ? 'selected' : ''; ?>>Mississippi</option>
+                    <option value="MO"<?php echo $state === 'MO' ? 'selected' : ''; ?>>Missouri</option>
+                    <option value="MT"<?php echo $state === 'MT' ? 'selected' : ''; ?>>Montana</option>
+                    <option value="NE"<?php echo $state === 'NE' ? 'selected' : ''; ?>>Nebraska</option>
+                    <option value="NV"<?php echo $state === 'NV' ? 'selected' : ''; ?>>Nevada</option>
+                    <option value="NH"<?php echo $state === 'NH' ? 'selected' : ''; ?>>New Hampshire</option>
+                    <option value="NJ"<?php echo $state === 'NJ' ? 'selected' : ''; ?>>New Jersey</option>
+                    <option value="NM"<?php echo $state === 'NM' ? 'selected' : ''; ?>>New Mexico</option>
+                    <option value="NY"<?php echo $state === 'NY' ? 'selected' : ''; ?>>New York</option>
+                    <option value="NC"<?php echo $state === 'NC' ? 'selected' : ''; ?>>North Carolina</option>
+                    <option value="ND"<?php echo $state === 'ND' ? 'selected' : ''; ?>>North Dakota</option>
+                    <option value="OH"<?php echo $state === 'OH' ? 'selected' : ''; ?>>Ohio</option>
+                    <option value="OK"<?php echo $state === 'OK' ? 'selected' : ''; ?>>Oklahoma</option>
+                    <option value="OR"<?php echo $state === 'OR' ? 'selected' : ''; ?>>Oregon</option>
+                    <option value="PA"<?php echo $state === 'PA' ? 'selected' : ''; ?>>Pennsylvania</option>
+                    <option value="RI"<?php echo $state === 'RI' ? 'selected' : ''; ?>>Rhode Island</option>
+                    <option value="SC"<?php echo $state === 'SC' ? 'selected' : ''; ?>>South Carolina</option>
+                    <option value="SD"<?php echo $state === 'SD' ? 'selected' : ''; ?>>South Dakota</option>
+                    <option value="TN"<?php echo $state === 'TN' ? 'selected' : ''; ?>>Tennessee</option>
+                    <option value="TX"<?php echo $state === 'TX' ? 'selected' : ''; ?>>Texas</option>
+                    <option value="UT"<?php echo $state === 'UT' ? 'selected' : ''; ?>>Utah</option>
+                    <option value="VT"<?php echo $state === 'VT' ? 'selected' : ''; ?>>Vermont</option>
+                    <option value="VA"<?php echo $state === 'VA' ? 'selected' : ''; ?>>Virginia</option>
+                    <option value="WA"<?php echo $state === 'WA' ? 'selected' : ''; ?>>Washington</option>
+                    <option value="WV"<?php echo $state === 'WV' ? 'selected' : ''; ?>>West Virginia</option>
+                    <option value="WI"<?php echo $state === 'WI' ? 'selected' : ''; ?>>Wisconsin</option>
+                    <option value="WY"<?php echo $state === 'WY' ? 'selected' : ''; ?>>Wyoming</option>
+                </select><br/>
+                <span class="error" ><?php echo $stateErr ?? ''; ?></span><br>
+
                 <label for = "zipCode">Zip Code:</label><br>
-                <input class = "zipCode" type = "text" id = "zipCode" name = "zipCode" required oninput="return validZipcode()"><br>
+                <input class = "zipCode" type = "text" id = "zipCode" name = "zipCode"
+                       value="<?php echo $zip;?> "required oninput="return validZipcode()"><br>
+                <span class="error"><?php echo $zipErr;?> </span><br>
 
                 <label for="phoneNumber">Phone Number:</label><br>
-                <input class = "phoneNumber" type="text" id="phoneNumber" name="phoneNumber" required oninput="return validPhoneNum()"><br>
+                <input class = "phoneNumber" type="text" id="phoneNumber" name="phoneNumber"
+                       value="<?php echo $phone;?> "required oninput="return validPhoneNum()"><br>
+                <span class="error"><?php echo $phoneErr;?> </span><br>
 
                 <label for = "email">Email:</label><br>
-                <input type = "text" id = "email" name = "email" required oninput="return validEmail()"><br>
+                <input type = "text" id = "email" name = "email"
+                       value="<?php echo $email;?> "required oninput="return validEmail()"><br>
+                <span class="error"><?php echo $emailErr;?> </span>
 
                 <br><label>Gender</label><br>
-                <input type = "radio" id="male" name="gender" value="Male" required oninput="return validGender()">
+                <input type = "radio" id="male" name="gender" <?php if ($gender=="Male") {echo "checked";}?> value="Male" required oninput="return validGender()">
                 <label for="male">Male</label><br>
-                <input type = "radio" id="female" name="gender" value="Female">
+                <input type = "radio" id="female" name="gender" <?php if ($gender=="Female") {echo "checked";}?> value="Female">
                 <label for="female">Female</label><br>
-                <input type = "radio" id="other" name="gender" value="Other">
+                <input type = "radio" id="other" name="gender" <?php if ($gender=="Other") {echo "checked";}?>value="Other">
                 <label for="other">Other</label><br>
+                <span class="error"><?php echo $genderErr;?></span><br>
 
                 <br><label>Marital Status</label><br>
-                <input type = "radio" id="single" name="maritalStatus" value="Single" required oninput="return validMarry()">
+                <input type = "radio" id="single" name="maritalStatus" <?php if ($marital=="Single") {echo "checked";}?> value="Single" required oninput="return validMarry()">
                 <label for="single">Single</label><br>
-                <input type = "radio" id="married" name="maritalStatus" value="Married">
+                <input type = "radio" id="married" name="maritalStatus" <?php if ($marital=="Married") {echo "checked";}?> value="Married">
                 <label for="married">Married</label><br>
+                <span class="error"><?php echo $maritalErr;?></span><br>
 
                 <br><label for="birthday">Birthday:</label><br>
-                <input type="date" id="birthday" name="birthday" required oninput="return validBirthday()"><br>
+                <input type="date" id="birthday" name="birthday"
+                       value="<?php echo $birth;?> "required oninput="return validBirthday()"><br>
+                <span class="error"><?php echo $birthErr;?></span><br>
 
                 <br><input type="submit" value="Submit"> <input type="reset" value="Reset">
             </form>
+
+            <?php
+                if ($isValid) {
+            ?>
+            <form id="hiddenForm" name="hiddenForm" method="POST" action="confirmation.php">
+                <?php
+                    foreach($_POST as $key => $value) {
+                        ?>
+                    <input name="<?php echo $key;?>" value="<?php echo $value?>" type="hidden"/>
+                        <?php
+                    }
+                    ?>
+            </form>
+            <script>document.createElement('form').submit.call(document.getElementById('hiddenForm'));</script>
+                <?php
+            }
+            ?>
 
             <br><br><br>
         </div>
