@@ -104,7 +104,7 @@ function validUsername() {
         return false;
     }
     else {
-        userName.style.borderColor = "green";
+        userName.style.borderColor = "lime green";
         return true;
     }
 }
@@ -124,7 +124,7 @@ function validPassword() {
         return false;
     }
     else {
-        password.style.borderColor = "green";
+        password.style.borderColor = "lime green";
         return true;
     }
 }
@@ -141,7 +141,7 @@ function validConfPassword() {
         return false;
     }
     else {
-        confPassword.style.borderColor = "green";
+        confPassword.style.borderColor = "lime green";
         return true;
     }
 }
@@ -158,7 +158,7 @@ function validFName() {
         return false;
     }
     else {
-        firstName.style.borderColor = "green";
+        firstName.style.borderColor = "lime green";
         return true;
     }
 }
@@ -175,7 +175,7 @@ function validLName() {
         return false;
     }
     else {
-        lastName.style.borderColor = "green";
+        lastName.style.borderColor = "lime green";
         return true;
     }
 }
@@ -191,7 +191,7 @@ function validAddress() {
         return false;
     }
     else {
-        address1.style.borderColor = "green";
+        address1.style.borderColor = "lime green";
         return true;
     }
 }
@@ -208,7 +208,7 @@ function validCity() {
         return false;
     }
     else {
-        city.style.borderColor = "green";
+        city.style.borderColor = "lime green";
         return true;
     }
 }
@@ -224,7 +224,7 @@ function validState() {
         state.style.borderColor = "red";
     }
     else {
-        state.style.borderColor = "green";
+        state.style.borderColor = "lime green";
         return true;
     }
 }
@@ -240,7 +240,7 @@ function validZipcode() {
         return false;
     }
     else {
-        zipCode.style.borderColor = "green";
+        zipCode.style.borderColor = "lime green";
         return true;
     }
 }
@@ -257,7 +257,7 @@ function validPhoneNum() {
         return false;
     }
     else {
-        phoneNumber.style.borderColor = "green";
+        phoneNumber.style.borderColor = "lime green";
         return true;
     }
 }
@@ -273,7 +273,7 @@ function validEmail() {
         return false;
     }
     else {
-        email.style.borderColor = "green";
+        email.style.borderColor = "lime green";
         return true;
     }
 }
@@ -284,7 +284,7 @@ function validGender() {
         return false;
     }
     else {
-        gender.style.borderColor = "green";
+        gender.style.borderColor = "lime green";
         return true;
     }
 }
@@ -295,7 +295,7 @@ function validMarry() {
         return false;
     }
     else {
-        maritalStatus.style.borderColor = "green";
+        maritalStatus.style.borderColor = "lime green";
         return true;
     }
 }
@@ -307,7 +307,7 @@ function validBirthday() {
         return false;
     }
     else {
-        birthday.style.borderColor = "green";
+        birthday.style.borderColor = "lime green";
         return true;
     }
 }

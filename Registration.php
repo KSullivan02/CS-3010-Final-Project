@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    include 'PHP/connectionInfo.php';
+?>
 <html lang="en">
 <head>
     <title>Registration</title>
@@ -78,7 +81,7 @@
             include 'PHP/inputValidate.php';
             ?>
             <hr>
-            <form id = "myForm" method="POST" novalidate onsubmit="return validateForm()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <form id = "myForm" method="POST" onsubmit="return validateForm()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <label for = "userName">User Name:</label><br>
                 <input type = "text" id = "userName" name = "userName"
                        value="<?php echo $userName; ?>" required oninput="return validUsername()"/><br>
@@ -99,24 +102,24 @@
                 <!--First Name-->
                 <label for = "firstName">First Name:</label><br>
                 <input type = "text" id = "firstName" name = "firstName"
-                       value="<?php echo $fName; ?> "required oninput="return validFName()"/><br>
-                <span class="error"><?php echo $fNameErr;?></span><br>
+                       value="<?php echo $firstName; ?> "required oninput="return validFName()"/><br>
+                <span class="error"><?php echo $firstNameErr;?></span><br>
 
                 <!--Last Name-->
                 <label for = "lastName"> Last Name:</label><br>
                 <input type = "text" id = "lastName" name = "lastName"
-                       value="<?php echo $lName; ?> " required oninput="return validLName()"/><br>
-                <span class ="error"><?php echo $lNameErr;?> </span><br>
+                       value="<?php echo $lastName; ?> " required oninput="return validLName()"/><br>
+                <span class ="error"><?php echo $lastNameErr;?> </span><br>
 
                 <label for = "address1">Address Line 1:</label><br>
                 <input type = "text" id = "address1" name = "address1"
-                       value="<?php echo $address; ?> " required oninput="return validAddress()"><br>
-                <span class ="error"><?php echo $addressErr;?> </span><br>
+                       value="<?php echo $address1; ?> " required oninput="return validAddress()"><br>
+                <span class ="error"><?php echo $address1Err;?> </span><br>
 
                 <label for = "address2">Address Line 2:</label><br>
                 <input type = "text" id = "address2" name = "address2"
-                       value="<?php echo $addTwo; ?> "><br>
-                <span class ="error"><?php echo $addTwoErr;?> </span><br>
+                       value="<?php echo $address2; ?> "><br>
+                <span class ="error"><?php echo $address2Err;?> </span><br>
 
                 <label for = "city">City:</label><br>
                 <input type = "text" id = "city" name = "city"
@@ -183,7 +186,7 @@
 
                 <label for = "zipCode">Zip Code:</label><br>
                 <input class = "zipCode" type = "text" id = "zipCode" name = "zipCode"
-                       value="<?php echo $zip;?> "required oninput="return validZipcode()"><br>
+                       value="<?php echo $zipCode;?> "required oninput="return validZipcode()"><br>
                 <span class="error"><?php echo $zipErr;?> </span><br>
 
                 <label for="phoneNumber">Phone Number:</label><br>
@@ -206,35 +209,22 @@
                 <span class="error"><?php echo $genderErr;?></span><br>
 
                 <br><label>Marital Status</label><br>
-                <input type = "radio" id="single" name="maritalStatus" <?php if ($marital=="Single") {echo "checked";}?> value="Single" required oninput="return validMarry()">
+                <input type = "radio" id="single" name="maritalStatus" <?php if ($maritalStatus=="Single") {echo "checked";}?> value="Single" required oninput="return validMarry()">
                 <label for="single">Single</label><br>
-                <input type = "radio" id="married" name="maritalStatus" <?php if ($marital=="Married") {echo "checked";}?> value="Married">
+                <input type = "radio" id="married" name="maritalStatus" <?php if ($maritalStatus=="Married") {echo "checked";}?> value="Married">
                 <label for="married">Married</label><br>
                 <span class="error"><?php echo $maritalErr;?></span><br>
 
                 <br><label for="birthday">Birthday:</label><br>
                 <input type="date" id="birthday" name="birthday"
-                       value="<?php echo $birth;?> "required oninput="return validBirthday()"><br>
+                       value="<?php echo $dateOfBirth;?> "required oninput="return validBirthday()"><br>
                 <span class="error"><?php echo $birthErr;?></span><br>
 
                 <br><input type="submit" value="Submit"> <input type="reset" value="Reset">
             </form>
 
             <?php
-                if ($isValid) {
-            ?>
-            <form id="hiddenForm" name="hiddenForm" method="POST" action="confirmation.php">
-                <?php
-                    foreach($_POST as $key => $value) {
-                        ?>
-                    <input name="<?php echo $key;?>" value="<?php echo $value?>" type="hidden"/>
-                        <?php
-                    }
-                    ?>
-            </form>
-            <script>document.createElement('form').submit.call(document.getElementById('hiddenForm'));</script>
-                <?php
-            }
+                include 'PHP/insertValidData.php';
             ?>
 
             <br><br><br>
@@ -250,6 +240,6 @@
     <p><a href="https://www.youtube.com/">Youtube</a> | <a href="https://app.destinyitemmanager.com">Destiny Item Manager</a></p>
 </footer>
 
-<!-- <script src="js/validateReg.js"></script> -->
+<script src="js/validateReg.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 // Define variables
-$lNameErr = $userNameErr = $fNameErr = $emailErr = $genderErr = $passwordErr = $confPassErr = $addressErr = $addTwoErr = $zipErr = $cityErr = $stateErr = $phoneErr = $maritalErr = $birthErr = "";
-$lName = $userName = $fName = $email = $gender = $password = $confPass = $address = $addTwo = $zip = $city = $state = $phone = $marital = $birth = "";
+$lastNameErr = $userNameErr = $firstNameErr = $emailErr = $genderErr = $passwordErr = $confPassErr = $address1Err = $address2Err = $zipErr = $cityErr = $stateErr = $phoneErr = $maritalErr = $birthErr = "";
+$lastName = $userName = $firstName = $email = $gender = $password = $confPass = $address1 = $address2 = $zipCode = $city = $state = $phone = $maritalStatus = $dateOfBirth = "";
 $isValid = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -44,43 +44,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $nameRegex = "/^[a-zA-Z0-9]{0,50}$/";
-    $fName = clean_input($_POST["firstName"]);
-    if (empty($fName)) {
-        $fNameErr = "First Name is Required";
+    $firstName = clean_input($_POST["firstName"]);
+    if (empty($firstName)) {
+        $firstNameErr = "First Name is Required";
         $isValid = false;
     } else {
-        if (!preg_match($nameRegex , $fName)) {
-            $fNameErr = "First Name must be less than 50 characters";
+        if (!preg_match($nameRegex , $firstName)) {
+            $firstNameErr = "First Name must be less than 50 characters";
             $isValid = false;
         }
     }
 
-    $lName = clean_input($_POST["lastName"]);
-    if (empty($lName)) {
-        $lNameErr = "Last Name is Required";
+    $lastName = clean_input($_POST["lastName"]);
+    if (empty($lastName)) {
+        $lastNameErr = "Last Name is Required";
         $isValid = false;
     } else {
-        if (!preg_match($nameRegex, $lName)) {
-            $lNameErr = "Last Name must be less than 50 characters";
+        if (!preg_match($nameRegex, $lastName)) {
+            $lastNameErr = "Last Name must be less than 50 characters";
             $isValid = false;
         }
     }
 
     $addRegex = "/^[a-zA-Z0-9\s]{0,100}$/";
-    $address = clean_input($_POST["address1"]);
-    if (empty($address)) {
-        $addressErr = "Address is Required";
+    $address1 = clean_input($_POST["address1"]);
+    if (empty($address1)) {
+        $address1Err = "Address is Required";
         $isValid = false;
     } else {
-        if (!preg_match($addRegex, $address)) {
-            $addressErr = "Address must be less than 100 characters, please use address line two if needed";
+        if (!preg_match($addRegex, $address1)) {
+            $address1Err = "Address must be less than 100 characters, please use address line two if needed";
             $isValid = false;
         }
     }
 
-    $addTwo = clean_input($_POST["address2"]);
-    if (!preg_match($addRegex, $addTwo)) {
-        $addTwoErr = "Address must be less than 100 characters, please use address line two if needed";
+    $address2 = clean_input($_POST["address2"]);
+    if (!preg_match($addRegex, $address2)) {
+        $address2ErrErr = "Address must be less than 100 characters, please use address line two if needed";
         $isValid = false;
         }
 
@@ -108,12 +108,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $zipRegex = "/^[0-9]{5}(-[0-9]{4})?$/";
-    $zip = clean_input($_POST["zipCode"]);
-    if (empty($zip)) {
+    $zipCode = clean_input($_POST["zipCode"]);
+    if (empty($zipCode)) {
         $zipErr = "Please enter a Zipcode";
         $isValid = false;
     } else {
-        if(!preg_match($zipRegex , $zip)) {
+        if(!preg_match($zipRegex , $zipCode)) {
             $zipErr = "Zipcode must be in the format of xxxxx or xxxxx-xxxx";
             $isValid = false;
         }
@@ -160,12 +160,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (isset($_POST["maritalStatus"])) {
-        $marital = clean_input($_POST["maritalStatus"]);
+        $maritalStatus = clean_input($_POST["maritalStatus"]);
         if (empty($_POST["maritalStatus"])) {
             $maritalErr = "Marital Status is required";
             $isValid = false;
         } else {
-            if (strlen($marital) > 50) {
+            if (strlen($maritalStatus) > 50) {
                 $maritalErr = "Marital Status must be less than 50 characters";
                 $isValid = false;
             }
@@ -176,11 +176,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Couldn't figure this out no matter what I did, and swapping to the confirmation page undoes my attempt at reformatting useing the Date function
-    $birth = clean_input($_POST["birthday"]);
-    if (!empty($birth)) {
-        $birth = date("m-d-y" , strtotime($birth));
+    $dateOfBirth = clean_input($_POST["birthday"]);
+    if (!empty($dateOfBirth)) {
+        $dateOfBirth = date("m-d-y" , strtotime($dateOfBirth));
     }
-    if (empty($birth)) {
+    if (empty($dateOfBirth)) {
         $birthErr = "Please select a date of birth";
         $isValid = false;
     }
